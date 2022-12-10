@@ -15,6 +15,7 @@ function generatePassword(){
    
    var passwordArray = []
     if (numbers===true){
+        
         passwordArray = passwordArray.concat(numbersArray);
     }
     if (lowerCases===true){
@@ -26,14 +27,18 @@ function generatePassword(){
      if(special===true){
         passwordArray = passwordArray.concat(specialCs);
      }
+     var passwordString = passwordArray.join('')
      var returnPassword = "";
+
     for (var i = 0; i < length; i++) {
-        //returnPassword = returnPassword+ passwordArray[Math.floor(Math.random() * passwordArray.length)];
-        var random = Math.floor(Math.random() * 4);
+        //this randomizes;
+        var random = Math.floor(Math.random() * passwordString.length);
 
-        returnPassword = passwordArray+random;
+        //substring randomizes within the selections. slack 209951 for ref
 
-        //returnPassword = returnPassword+ passwordArray[Math.floor(Math.random() * passwordArray.length)]
+        returnPassword += passwordString.substring(random, random +1);
+
+        
     }
     return returnPassword
     }
@@ -42,11 +47,7 @@ function generatePassword(){
     
 // Write password to the #password input
 function writePassword() {
-  /*var length = prompt("How long do you want your password to be?");
-  var numbers = confirm("Do you want numbers in your password?");
-  var lowerCases = confirm("Do you want lowercases in your password?");
-  var upperCases = confirm("Do you want uppercases in your password?");
-  var special = confirm("Do you want special characters in your password?"); */
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -54,4 +55,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//length, numbers, lowerCases, upperCases, special) is what you had in the var password parenthese in write Password

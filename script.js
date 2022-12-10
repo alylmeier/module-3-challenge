@@ -15,16 +15,16 @@ function generatePassword(){
    
    var passwordArray = []
     if (numbers===true){
-        passwordArray.concat(numbersArray);
+        passwordArray = passwordArray.concat(numbersArray);
     }
     if (lowerCases===true){
-        passwordArray.concat(lcArray);
+        passwordArray = passwordArray.concat(lcArray);
     }
     if(upperCases===true){
-        passwordArray.concat(ucArray);
+        passwordArray = passwordArray.concat(ucArray);
     }
      if(special===true){
-        passwordArray.concat(specialCs);
+        passwordArray = passwordArray.concat(specialCs);
      }
      var returnPassword = "";
     for (var i = 0; i < length; i++) {
@@ -32,11 +32,14 @@ function generatePassword(){
         var random = Math.floor(Math.random() * 4);
 
         returnPassword = passwordArray+random;
+
+        //returnPassword = returnPassword+ passwordArray[Math.floor(Math.random() * passwordArray.length)]
     }
-    return [returnPassword]
+    return returnPassword
+    }
+    
 
     
-}
 // Write password to the #password input
 function writePassword() {
   /*var length = prompt("How long do you want your password to be?");

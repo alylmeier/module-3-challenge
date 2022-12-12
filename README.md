@@ -1,2 +1,2 @@
 # module-3-challenge
-https://raw.githubusercontent.com/alylmeier/module-3-challenge/main/images/generatormockup
+https://github.com/alylmeier/module-3-challenge/blob/main/images/generatormockup.png?raw=true

@@ -1,5 +1,5 @@
 # Module-3-Challenge
-Randome Password Generator
+Random Password Generator
 # <Password Generator>
 
 ## Description
